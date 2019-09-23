@@ -27,7 +27,6 @@ export default class Main extends React.Component<any, any> {
     }
 
     onPress(e: any) {
-        // console.log(e)
     }
 
 

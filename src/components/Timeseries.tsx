@@ -9,6 +9,7 @@ interface IState {
 
 export default class Timeseries extends React.Component<any, any> {
     
+    colors: any;
 
     constructor(props: any) {
         super(props);
@@ -20,12 +21,19 @@ export default class Timeseries extends React.Component<any, any> {
             lang:{
                 rangeSelectorZoom: ''
             }
-        })
+        });
+
+        this.colors = Highcharts.getOptions().colors;
+        
     }
 
     options: any =  {
         chart: {
-            height: 300
+            height: 300,
+            backgroundColor: undefined,
+            borderColor: undefined,
+            borderWidth: 0,
+            plotBorderColor: undefined,
         },
         title: {
             text: undefined
@@ -54,36 +62,23 @@ export default class Timeseries extends React.Component<any, any> {
             enabled: false
         },
         credits: { enabled: false},
-        plotOptions: {
-            area: {
-                fillColor: {
-                    linearGradient: {
-                        x1: 0,
-                        y1: 0,
-                        x2: 0,
-                        y2: 1
-                    },
-                    stops: [
-                        [0, "rgba(223,242,255,1)"],
-                        [1, 'rgba(255,255,255,1)']
-                    ]
-                },
-                marker: {
-                    radius: 2
-                },
-                lineWidth: 1,
-                states: {
-                    hover: {
-                        lineWidth: 1
-                    }
-                }
-            }
-        },
         navigator: {enabled: false},
         series: [{
             type: 'area',
-            name: 'AAPL Stock Price',
+            name: 'Trans sales price',
             data: timeseries_data ? timeseries_data : [],
+            fillColor: {
+                linearGradient: {
+                    x1: 0,
+                    y1: 1,
+                    x2: 1,
+                    y2: 1
+                },
+                stops: [
+                    [0, 'rgba(223,242,255,1)'],
+                    [1, 'rgba(255,0,0,0.4)']
+                ]
+            },
             threshold: undefined,
             tooltip: {
                 valueDecimals: 2

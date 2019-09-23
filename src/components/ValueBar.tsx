@@ -32,7 +32,7 @@ export default class ValueBar extends React.Component<any, any> {
         const result = ValueBar.linearMap(x, mn1, mx1, mn2, mx2);
         this.setState({width: result})
 
-        console.log(result)
+        // console.log(result)
     }
 
 

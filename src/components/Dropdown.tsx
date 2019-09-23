@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../styles/Dropdown.scss';
-import { element } from 'prop-types';
 
 type StyleType = 'pagination' | 'list';
 
@@ -25,10 +24,7 @@ export class MenusItem extends React.Component<any, any> {
 
     }
     
-    onPress() {
-        console.log(this);
-        // if(this.props.onPress) this.props.onPress(this);
-    }
+    onPress() {}
 
     render() {
         if(this.props.value) return (<a onClick={this.onPress} href={this.props.href && this.props.href} className="menus__item"><span>{this.props.value}</span></a>);
@@ -77,8 +73,6 @@ export default class Dropdown extends React.Component<any, any> {
         const ref: any = ReactDOM.findDOMNode(this);
         ref.addEventListener('click', this.activate);
         
-        // this.activate.bind(this);
-        // this.activate(dropdown);
     }
 
     activate(event: any) {
