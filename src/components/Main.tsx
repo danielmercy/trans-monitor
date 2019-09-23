@@ -42,7 +42,6 @@ export default class Main extends React.Component<any, any> {
                                     <Info.Value>2,342</Info.Value>
                                 </Info>
                                 <span className="space"></span>
-                                {/* <div data-sparkline="50.0, 20.4, 39.3, 66.0 54.2 68"></div> */}
                                 <Sparkline data={[50.0, 20.4, 39.3, 66.0, 54.2, 68]} />
                             </Card>
                             <Card flex>
