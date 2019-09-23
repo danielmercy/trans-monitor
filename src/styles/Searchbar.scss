@@ -1,0 +1,35 @@
+@import './shared.scss';
+
+div.search-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 35%;
+    position: relative;
+    left: -($header-height / 2 ) + 30px;
+    background: transparent;
+
+    &.outline-bottom {
+        transition: all 500ms ease-in-out;
+        border-bottom: 1px solid #787878;
+
+        &:hover {
+            border-bottom-color: $blue;
+            transition: all 500ms ease-in-out;
+        }
+    }
+
+    span.icon {
+        position: absolute;
+        left: 3px;
+    }
+
+    input {
+        padding: 8px 10px;
+        border: none;
+        width: 100%;
+        color: $text-color;
+        padding-left: 30px;
+        background: transparent;
+    }
+}

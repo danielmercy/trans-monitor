@@ -1,0 +1,103 @@
+@import './shared.scss';
+
+
+main {
+    margin-left: $side-bar-width;
+    margin-top: $header-height + 40;
+
+    @include respond-to(medium-screens) {
+        margin-left: 64px;
+    }
+
+    .container {
+        max-width: 94%;
+        width: 100%;
+        margin: auto;
+    }
+
+    .surmount-volval {
+        display: flex;
+        flex-direction: row;
+
+        @include respond-to(custom-a) {
+            flex-direction: column;
+
+            .surmount-volval__group:last-child {
+                margin-top: 8px;
+            }
+        }
+
+        .surmount-volval__group {
+            display: inline-flex;
+            width: 100%;
+        }
+
+        .card {
+            margin-right: 8px;
+            text-align: left;
+
+            &:last-child {
+                margin: 0;
+            }
+        }
+
+        .width-20 {
+            width: 20px;
+            display: inline-block;
+        }
+    }
+
+    .surmount-charts {
+        display: flex;
+        margin: 24px 0;
+        flex-direction: row;
+
+        @include respond-to(custom-a) {
+            flex-direction: column-reverse;
+        }
+
+        .card {
+            margin-right: 5px;
+            padding: 0;
+
+            .header {
+                margin: 20px;
+                margin-bottom: 10px;
+                span {
+                    color: rgba(#333, .8);
+                    font-size: 1em;
+                    font-weight: bolder;
+                }
+            }
+        }
+
+        .surmount-orders-payments {
+            display: inline-flex;
+            flex-direction: column;
+            width: 60%;
+
+            @include respond-to(custom-a) {
+                flex-direction: row;
+                width: 100%;
+
+                .card:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            .card {
+                height: 100%;
+                .header {
+                    margin-bottom: 5px;
+                    text-align: left;
+                }
+                .content {
+                    padding: 0 20px;
+                }
+                &:first-child {
+                    margin-bottom: 5px;
+                }
+            }
+        }
+    }
+}

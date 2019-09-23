@@ -1,0 +1,22 @@
+@import './shared.scss';
+
+.indicator {
+    display: inline-block;
+    width: 100%;
+    background: #FDC203;
+    height: 4px;
+    position: relative;
+    border-radius: 25px;
+    overflow: hidden;
+
+    span.bar {
+        position: absolute;
+        display: inline-block;
+        height: 4px;
+        left: 0;
+        background: $reconcilled-color;
+        will-change: width;
+        transition: all .2s ease;
+        transition-delay: 1s;
+    }
+}

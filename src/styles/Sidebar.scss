@@ -1,0 +1,129 @@
+@import './shared.scss';
+
+aside {
+    height: 100vh;
+    max-width: $side-bar-width;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 3px 10px rgba(0,0,0,.04);
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 50;
+
+    @include respond-to(medium-screens) {
+        max-width: 64px;
+    }
+
+    &:hover {
+        @include respond-to(medium-screens) {
+            max-width: $side-bar-width;
+            transition: all 500ms ease;
+
+            .aside__nav {
+                box-shadow: 0 3px 6px rgba(0,0,0,.15);
+
+                .link-group label {
+                    text-align: left;
+                    margin: 12px 40px;
+                    transition: all 500ms ease;
+                }
+
+                .link-group a {
+                    padding: 8px 40px;
+
+                    span.icon {
+                        margin-right: 10px;
+                        transition:  all 500ms ease;
+                    }
+
+                    span:last-child {
+                        visibility: visible;
+                        opacity: 1;
+                        transition-delay: 300ms;
+                    }
+                }
+            }
+        }
+    }
+    
+    &::-webkit-scrollbar {
+        width: 6px;
+        background-color: transparent;
+        display: none;
+    }
+
+    &:hover &::-webkit-scrollbar {
+        display: inline-block;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: rgba(#333, .5);
+    }
+    
+    .aside__nav {
+        padding: $header-height + 30px 0;
+
+        .link-group {
+            font-size: .7em;
+            margin: 24px 0;
+
+            &.button {
+                margin: 12px 40px;
+            }
+
+            label {
+                display: block;
+                margin: 12px 40px;
+                color: $text-color;
+
+                @include respond-to(medium-screens) {
+                    margin: 8px;
+                    text-align: center;
+                }
+            }
+
+            a {
+                padding: 8px 40px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: $text-color;
+
+                @include respond-to(medium-screens) {
+                    padding: 20px;
+                    margin: auto;
+                }
+
+                span.icon {
+                    margin-right: 10px;
+                    transition:  all 500ms ease;
+                    @include respond-to(medium-screens) {
+                        margin-right: -300px;
+                        transition:  all 500ms ease;
+                    }
+                }
+
+                span:last-child {
+                    @include respond-to(medium-screens) {
+                        visibility: hidden;
+                        opacity: 0;
+                    }
+                }
+
+                &:hover {
+                    background: #eee;
+                }
+
+                &.active {
+                    background: rgba(#1875F0, .1);
+                    border-left: 5px solid #1875F0;
+                }
+            }
+        }
+    }
+}

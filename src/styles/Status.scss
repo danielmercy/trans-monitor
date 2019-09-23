@@ -1,0 +1,78 @@
+@import './shared.scss';
+
+$decrease-size: 10px;
+
+.status {
+    border: none;
+    padding: 10px;
+    border-radius: 50px;
+    font-weight: 600;
+    position: relative;
+
+    span {
+        margin-left: 18px;
+    }
+
+    &.status--reconcilled {
+        text-align: left;
+        font-size: .9em;
+        color: $reconcilled-color;
+        border: 1px solid #CCCFD4;
+        background: transparent;
+        text-transform: capitalize !important;
+        width: $btn-width - $decrease-size;
+
+        &::before {
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $reconcilled-color;
+        }
+    }
+
+    &.status--unreconcilled {
+        text-align: left;
+        font-size: .9em;
+        color: $un-reconcilled-color;
+        border: 1px solid #CCCFD4;
+        background: transparent;
+        text-transform: capitalize !important;
+        width: $btn-width - $decrease-size;
+
+        &::before {
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $un-reconcilled-color;
+        }
+    }
+    
+    &.status--pending {
+        text-align: left;
+        font-size: .9em;
+        color: $pending-color;
+        background: transparent;
+        border: 1px solid #CCCFD4;
+        text-transform: capitalize !important;
+        width: $btn-width - $decrease-size;
+
+        &::before {
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: $pending-color;
+        }
+    }
+}

@@ -1,0 +1,85 @@
+@import './shared.scss';
+
+.table {
+    .table__header {
+        margin: 20px 0;
+        
+        span.table__header__title {
+            font-size: 2em;
+            line-height: 48px;
+        }
+
+        .table__header__content {
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    }
+
+    .table__content {
+        overflow-x: auto;
+    }
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    vertical-align: middle;
+    overflow-x: auto;
+
+    thead {
+        background: #EAEEF0;
+        border: none;
+
+        th {
+            padding: 15px 25px;
+            text-align: left;
+            border: none;
+            font-size: .9em;
+            color: #7F8FA4;
+            line-height: 19px;
+            font-weight: 400;
+        }
+    }
+
+    tbody {
+        background: white;
+        text-align: center;
+        tr {
+            border-bottom: 1px solid #CCCFD4;
+
+            &:last-child {
+                border: none;
+            }
+
+        }
+        td {
+            padding: 15px 25px;
+            color: $text-color;
+            font-size: .9em;
+
+            @include respond-to(medium-screens) {
+                padding: 15px;
+            }
+
+            &:first-child {
+                text-align: left;
+                color: #414042;
+            }
+
+            .avatar {
+                width: 36px;
+                height: 36px;
+                border-radius: 50%;
+                background: #7F8FA4;
+                color: white;
+                display: inline-flex;
+                vertical-align: middle;
+                justify-content: center;
+                align-items: center;
+                margin-right: 30px;
+            }
+        }
+    }
+}
